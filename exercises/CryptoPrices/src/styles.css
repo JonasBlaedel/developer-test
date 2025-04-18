@@ -1,43 +1,203 @@
-/* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #333;
+  --table-color: #181718;
+  --primary-color: #e3e0e0;
+  --accent-color: #666;
+  --secondary-color: #999;
+  --green-color: #20320a;
+  --green-color-text: #6aae0d;
+  --red-color: #5c0c1d;
+  --red-color-text: #dc4a4e;
+  --heading-color: #54c1e1;
+  --font-size-heading: 1.5rem;
+  --font-size-small: 0.7rem;
+  --font-size-medium: 0.9rem;
+  --font-size-large: 1.2rem;
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
+  --margin-small: 0.5rem;
+  --margin-medium: 1rem;
+  --margin-large: 2rem;
+  --gap-small: 0.5rem;
+  --gap-medium: 1rem;
+  --gap-large: 2rem;
+  --font-weight-bold: 700;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  font-size: var(--font-size-medium);
+  background-color: var(--background-color);
 }
 
 /* Basic layout styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  padding: var(--padding-small);
+  text-align: center;
 }
 
 header h1 {
-    font-size: 24px;
+  font-size: var(--font-size-heading);
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: var(--margin-large) auto;
+  max-width: 800px;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: var(--padding-small);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-/* Add your CSS below here */
+.table-container {
+  width: 100%;
+  margin: var(--margin-medium) 0;
+}
+
+table {
+  background-color: var(--table-color);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .table-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 800px;
+  }
+}
+
+table thead tr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: var(--header-color);
+  color: var(--secondary-color);
+  padding: var(--padding-small);
+}
+
+table tbody tr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+table th,
+table td {
+  padding: var(--padding-small);
+  text-align: left;
+  border: 1px solid var(--accent-color);
+}
+
+th {
+  color: var(--heading-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td {
+  color: var(--primary-color);
+}
+
+.coin-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.coin-cell img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.coin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+}
+
+.coin-name {
+  font-size: var(--font-size-small);
+  color: var(--secondary-color);
+}
+
+.price-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-change-H-L {
+  margin-inline: var(--margin-small);
+}
+
+.price-change-H {
+  background-color: var(--green-color);
+  color: var(--green-color-text);
+  padding: var(--padding-small);
+}
+
+.price-change-L {
+  background-color: var(--red-color);
+  color: var(--red-color-text);
+  padding: var(--padding-small);
+}
+
+.market-cap-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#pagination {
+  margin: var(--margin-medium) 0x;
+}
+
+button {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  padding: var(--padding-small);
+  border: 1px solid var(--secondary-color);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+}
+
+button:disabled {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}

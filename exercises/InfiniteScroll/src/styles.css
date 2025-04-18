@@ -1,43 +1,107 @@
 /* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #333;
+  --secondary-color: #f4f4f4;
+  --padding-small: 1rem;
+  --padding-medium: 2rem;
+  --padding-large: 3rem;
+  --font-size-small: 0.875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.5rem;
+  --border-radius: 0.5rem;
+  --margin-small: 0.5rem;
+  --margin-medium: 1rem;
+  --margin-large: 2rem;
+  --gap-small: 0.5rem;
+  --gap-medium: 1rem;
+  --gap-large: 2rem;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 /* Basic layout styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: var(--padding-small);
+  text-align: center;
 }
 
 header h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  margin: var(--margin-large) 0;
+}
+
+#testimonial-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large);
+  max-width: 800px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .testimonial {
     display: flex;
-    justify-content: center;
-    margin: 40px 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #fff;
+    padding: var(--padding-medium);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+@media (min-width: 768px) {
+  .testimonial img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: var(--padding-small);
+  width: 100%;
 }
-
-/* Add your CSS below here */
