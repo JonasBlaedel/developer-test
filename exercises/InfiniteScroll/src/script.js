@@ -4,7 +4,7 @@ const NEW_URL = CORS_PROXY + API_URL;
 
 const testimonialContainer = document.getElementById('testimonial-container');
 
-const testimonialAmount = 7;
+const testimonialAmount = 5;
 let finalTestimonialId;
 let hasNext;
 let testimonialArr = [];
